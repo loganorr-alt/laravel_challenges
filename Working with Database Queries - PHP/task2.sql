@@ -1,0 +1,1 @@
+select avg(u.age) average_age from users u;

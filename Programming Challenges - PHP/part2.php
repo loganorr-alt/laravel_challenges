@@ -4,6 +4,10 @@ print('Is HelLo a palindrome? - '. (palindromeCheck('HelLo') ? 'Yes' : 'No'). PH
 
 print('Is 123321 a palindrome? - '. (palindromeCheck('1234321') ? 'Yes' : 'No'). PHP_EOL);
 
+print('Is 20102 a palindrome? - '. (palindromeCheck('20102') ? 'Yes' : 'No'). PHP_EOL);
+
+print('Is 120102 a palindrome? - '. (palindromeCheck('120102') ? 'Yes' : 'No'). PHP_EOL);
+
 print('Is \'\' (blank) a palindrome? - '. (palindromeCheck('') ? 'Yes' : 'No'). PHP_EOL);
 
 print('Is \'a\' a palindrome? - '. (palindromeCheck('a') ? 'Yes' : 'No'). PHP_EOL);
@@ -40,6 +44,31 @@ function palindromeCheck(string $string): bool {
     }
 
     return true;
+}
+
+/**
+ * Checks to see if a string is a palindrome.
+ * 
+ * This is an alternative approach to the above function. But this time doing a simple string reverse and comparison.
+ * 
+ * This goes against the spirit of this challenge - but it this is quick and to the point. 
+ * 
+ * In terms of big O notation, the worst case is O(n) (implemetation dependent) vs the O(n/2) in the above approach but strrev is a builtin function made in C, 
+ * so there is a possibility this is approach could still faster .
+ */
+function palindromeCheckDirty(string $string): bool {
+    $string = strtolower($string);
+
+    //a string with only one character or less is a palindrome
+    if ($length == 0) {
+        return false;
+    }
+
+    // this goes against the spirit of this challenge - it this is quick and to the point. 
+    // In terms of big O notation, this is O(n) vs O(n/2) but strrev is a built in function so there is a possibility this is still faster.
+    if ($string === strrev($string)) {
+        return true;
+    }
 }
 
 /**
