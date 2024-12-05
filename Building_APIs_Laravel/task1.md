@@ -1,11 +1,11 @@
 # Drafting an endpoint to return all product details from the products table.
 
-I'll use much of the same process and thought process as in 'Creating and designing APIs - PHP'.
+I'll use much of the same process and thought process as in 'Creating and designing APIs - PHP'. I encourage reviewing that section before this one to view my thought processes. I will be 'skipping to the end' so to speak in this sections tasks.
 
 - *Api Type:* Rest
 - *Endpoint path*: /api/poducts
 - *unique identifier:* n/a - this is a fetch all endpoint
-- *Structure:* [See the OpenAPI definition in (openapi.yml)](openapi.yml)**
-- *Where / how will it be built:* As per the task, this will be in Laravel.
+- *Structure:* [See the OpenAPI definition in (openapi.yml)](openapi.yml)
+- *Where / how will it be built:* As per the brief, this will be in Laravel.
 
 I've created a redumentary version of this endpoint in the sample laravel application here in @TODO. Of note, I have not implemented any security or authentication. 
