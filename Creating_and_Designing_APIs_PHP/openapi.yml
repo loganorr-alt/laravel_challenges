@@ -21,7 +21,7 @@ paths:
         - posts
       summary: Add a post
       description: Create a post
-      operationId: add Post
+      operationId: addPost
       requestBody:
         description: Create a post
         content:
@@ -42,7 +42,8 @@ paths:
           description: Validation exception
       security:
         - application_auth:
-            - read:users
+            - read:posts 
+            - write:posts 
   /users/{user_id}:
     get:
       tags:
@@ -66,7 +67,9 @@ paths:
                 $ref: '#/components/schemas/User'
         '404':
           description: User not found or you do not have permission to see this user
-      
+      security:
+        - application_auth:
+            - read:users     
 components:
   schemas:
     Post:
