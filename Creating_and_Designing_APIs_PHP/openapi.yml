@@ -42,8 +42,7 @@ paths:
           description: Validation exception
       security:
         - application_auth:
-            - write:posts
-            - read:posts
+            - read:users
   /users/{user_id}:
     get:
       tags:
@@ -67,6 +66,7 @@ paths:
                 $ref: '#/components/schemas/User'
         '404':
           description: User not found or you do not have permission to see this user
+      
 components:
   schemas:
     Post:
@@ -143,6 +143,7 @@ components:
           scopes:
             write:posts: modify posts in your account
             read:posts: read your posts
+            read:users: read user data
     api_key:
       type: apiKey
       name: api_key

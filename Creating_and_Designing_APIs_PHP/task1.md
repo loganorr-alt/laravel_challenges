@@ -47,11 +47,11 @@ Note - uuidv7 does infact follow a pattern - the first few digits use the curren
 3. **Machine name / name** - e.g `/api/users/test_name`. This approach creates by far the most human readable urls. They are great in cases where a name isn't expected to change much and it's not revealing to much information. In the example here we're using the users full name, a hacker could use this to deduct the correct id for a user, or even use it to determine if we have a user in our system at all. Machine names also have a problem where if the field we are using for the name changes (e.g a person changes their name to Test Name 2) then all urls will either have to keep using the old - now incorrect - name, or the url changes, and all hardcoded endpoints break.
 
 ## 4. What structure the response should take.
-**[See the OpenAPI schema here (openapi.yml)](openapi.yml)**
+**[See the OpenAPI schema here (openapi.yml), this is for both Task1 and Task2](openapi.yml)**
 
 **404 will be used for both invalid id AND permission denied**
 
-The formality of what the response and request should look like. There are a few ways to do this, a simple document with a table listing the fields and their datatypes will do the trick. We should also define what the responses should be - e.g what a 404 looks like.
+The formality of what the response and request should look like. There are a few ways to do this, a simple document with a table listing the fields and their datatypes will do the trick. We should also define what the responses should be, - e.g what a 404 looks like. Finally it's a good time to consider auth rules.
 
 In this example I have chosen to make a permission denied to view a user return a 404. This is becoming standard practice for private data. It makes it harder for a hacker (or someone snooping), to deduct if a user id exists in the system or not. A 404 could either mean the user isn't in the system, or that they just can't see it - the ambiquity makes their job harder.
 
