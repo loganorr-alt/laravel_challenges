@@ -52,7 +52,8 @@ As with Automated testing, I built these directly into the laravel sample and th
 - [laravel-sample/database/seeders](laravel-sample/database/seeders)
 
 
+
 - [Task 1 - split out from Laravel](Database_Schema_and_Seeding_Laravel/task1.php)
 - [Task 2 - split out from Laravel](Database_Schema_and_Seeding_Laravel/task2.php)
 - [Task 3 - split out from Laravel - The Seeder](Database_Schema_and_Seeding_Laravel/task3-seeder.php)
-- [Task 3 - split out from Laravel - The Factory](Database_Schema_and_Seeding_Laravel/task3-seeder.php)
+- [Task 3 - split out from Laravel - The Factory](Database_Schema_and_Seeding_Laravel/task3-factory.php)
