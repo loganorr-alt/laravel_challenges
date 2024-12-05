@@ -47,7 +47,7 @@ Note - uuidv7 does infact follow a pattern - the first few digits use the curren
 3. **Machine name / name** - e.g `/api/users/test_name`. This approach creates by far the most human readable urls. They are great in cases where a name isn't expected to change much and it's not revealing to much information. In the example here we're using the users full name, a hacker could use this to deduct the correct id for a user, or even use it to determine if we have a user in our system at all. Machine names also have a problem where if the field we are using for the name changes (e.g a person changes their name to Test Name 2) then all urls will either have to keep using the old - now incorrect - name, or the url changes, and all hardcoded endpoints break.
 
 ## 4. What structure the response should take.
-**[./openapi.yml](See the OpenAPI schema here (openapi.yml))**
+**[See the OpenAPI schema here (openapi.yml)](openapi.yml)**
 
 **404 will be used for both invalid id AND permission denied**
 
