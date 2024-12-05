@@ -2,7 +2,7 @@
 
 **The server I provisioned using Forge is available here:** [https://laravel.tuffing.co.nz/](https://laravel.tuffing.co.nz/)
 
-I'll allow this server to stay up for 2-3 weeks, assuming cancelling a Forge account doesn't destroy the provisioned server. It's running on a cheap Linode server, so I'm not too worried about t the price on that end. 
+I'll allow this server to stay up for 2-3 weeks, assuming cancelling a Forge account doesn't destroy the provisioned server. It's running on a cheap Linode server, so I'm not too worried about the price on that end. 
 
 For time limitation reasons, here I go over the steps to set up Forge by hand. However forge has both a CLI and an SDK - the SDK being able to provision new servers. This would be perfect for creating a server by a script or in a pipeline - though there are limited uses for this. It could be useful to update an existing server via standardised scripts / config as code for example. I wouldn't advise using a code pipline to do this. It could get rapidly expensive quickly.
 
