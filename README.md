@@ -35,14 +35,14 @@ These were written with PostgreSQL in mind.
 
 # Section 4: Building APIS (Laravel)
 
-Note: This is the last section I worked on, and as may be evident, incomplete, and rushed.
+**Note:** This is the last section I worked on, and as may be evident, incomplete, and rushed.
 
 The design phase uses the same process as in the Creating and Designing APIs section.
 
-- [Task 1](Building_APIs_Laravel/task1.php)
-- [Task 2](Building_APIs_Laravel/task2.php)
-- [Task 3](Building_APIs_Laravel/task3.php)
-- [Open API yaml definition](Building_APIs_Laravel/task3.php)
+- [Task 1](Building_APIs_Laravel/task1.md)
+- [Task 2](Building_APIs_Laravel/task2.md)
+- [Task 3](Building_APIs_Laravel/task3.md)
+- [Open API yaml definition](Building_APIs_Laravel/openapi.yml)
 
 
 
