@@ -26,7 +26,7 @@ First create a yml file in the `.github/workflows` workflow directory in your re
 name: Trigger Forge Deployment
 ```
 
-**2.  Next is the trigger, it follows the format `on:` and then the action, and finally any rules that should be matched. **
+**2.  Next is the trigger, it follows the format `on:` and then the action, and finally any rules that should be matched.**
 
 The action will often a push to a branch, or a PR request, tag questions etc. While the rule will ussually be the name of a branch.
 
@@ -48,7 +48,7 @@ on:
 ```
 
 
-**3. We then describe the job we want run. This part is also the most complicated. **
+**3. We then describe the job we want run. This part is also the most complicated.**
 
 To get started we add a `jobs:` section followed by a set of actions we'll like to see take place.
 
@@ -84,6 +84,6 @@ jobs:
 
 See the two screenshots below. The first shows the job `call-forge-trigger` running in Github Actions. The second shows it successfully triggering a deployment in Forge.
 
-![alt text](gitaction_run.png)
+![alt text](gitaction_details.png)
 
 ![alt text](forge_run.png)
