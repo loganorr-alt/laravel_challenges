@@ -1,0 +1,15 @@
+name: Trigger Forge Deployment
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  call-forge-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Forge Deployment URL
+        env:
+          FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
+        run: |
+          curl -X GET "https://forge.laravel.com/servers/865308/sites/2549588/deploy/http?token=$FORGE_API_TOKEN"
