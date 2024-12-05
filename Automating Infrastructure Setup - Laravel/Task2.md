@@ -18,7 +18,7 @@ This trigger url looks something like `https://forge.laravel.com/servers/865308/
 
 ### Building out a deployment yml file.
 
-First create a yml file in the `.github/workflows` workflow directory in your repository. I've created one called deploy.yml - [you can see the complete file here](../.github/workflows/deploy.yml.example)
+First create a yml file in the `.github/workflows` workflow directory in your repository. I've created one called deploy.yml - [you can see the complete file here](../.github/workflows/deploy.yml.example) (This is the correct location, I've named the file deploy.yml.example so it won't run. Disabling the action in the interface is also a valid option)
 
 **1. The first line is the name, this is how we'll identify it in Github:**
 
