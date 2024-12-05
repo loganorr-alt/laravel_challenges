@@ -1,0 +1,149 @@
+openapi: 3.0.3
+info:
+  title: Creating and Designing APIs
+  description: |-
+    End point for the Creating and Designing APIs tasks
+    
+  contact:
+    email: logan.orr@tuffing.co.nz
+  version: 0.0.1
+servers:
+  - url: https://laravel.tuffing.co.nz/api/
+tags:
+  - name: user
+    description: Operations about user
+  - name: posts
+    description: Posts - post a post
+paths:
+  /posts:
+    post:
+      tags:
+        - posts
+      summary: Add a post
+      description: Create a post
+      operationId: add Post
+      requestBody:
+        description: Create a post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'          
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+      security:
+        - application_auth:
+            - write:posts
+            - read:posts
+  /users/{user_id}:
+    get:
+      tags:
+        - user
+      summary: Get user by user id
+      description: ''
+      operationId: getUserById
+      parameters:
+        - name: user_id
+          in: path
+          description: 'The id of the user that needs to be fetched. Use 1 for testing. '
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found or you do not have permission to see this user
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Creating a Post
+        content:
+          type: string
+          description: message body
+          format: string
+          example: New Post body text
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        name:
+          type: string
+          example: Test Name
+        email:
+          type: string
+          example: test_name@email.com
+        bio:
+          type: string
+          example: 'Backend Web Developer'
+        url:
+          type: string
+          example: 'https://website.com'
+        created_at:
+          type: string
+          description: Date time this user was created
+          format: date-time
+          example: 2022-07-04T10:29:45Z
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+      xml:
+        name: '##default'
+  requestBodies:
+    Post:
+      description: Post object that needs to be added
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Post'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Post'
+    UserArray:
+      description: List of user object
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+  securitySchemes:
+    application_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://laravel.tuffing.co.nz/oauth/authorize
+          scopes:
+            write:posts: modify posts in your account
+            read:posts: read your posts
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

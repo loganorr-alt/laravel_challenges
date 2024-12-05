@@ -3,14 +3,14 @@
 To plan an api / end point, there are a few decisions to make:
 
 1. What type of API should be used.
-2a. What should the api urls look like.
-2b. What unique identifer should the urls use
-3. What structure the response should take. 
-4. What should this endpoint be *built in*?
+2. What should the api urls look like.
+3. What unique identifer should the urls use
+4. What structure the response should take. 
+5. What should this endpoint be *built in*?
 
 The first two steps are already done for us, the result is JSON, and it's a standard GET request you'd expect as part of a CRUD (Create, read, update, delete) api. So the API should be REST. Secondly the endpoint url has already been defined.
 
-The third step has been partially completed. An example of the response has been provided, but not the formalities. For this step I'll use OpenAPI - I'll explain this reasoning in it's section below.
+The fourth step has been partially completed. An example of the response has been provided, but not the formalities. For this step I'll use OpenAPI - I'll explain this reasoning in it's section below.
 
 I'll run through this task on the premise that the first two steps haven't already been done. The decisions made are good ones, so I'll justify them.
 
@@ -23,7 +23,7 @@ SOAP is ussually recommend against. It is big and unwieldy, it's not fun to read
 
 RPC has had a surge of popular lately, though it's older than Rest. For our needs, Rest is the better system of the two for standard CRUD tasks. So we'll go with that.
 
-## 2a. What should the api url look like:  
+## 2. What should the api url look like:  
 **`/api/{noun in plural}/{optional id}` - the verb will be the request method. `/api/users/{user_id}`**
 
 `/api/{noun in plural}/{optional id}` is my go to for api urls. It's nice and easy to interpret, and cleanly groups all calls related to a feature together. 
@@ -36,8 +36,8 @@ Finally, we are placing the unique identifer {user_id} inside the url. The alter
 
 I won't touch on many alternative url path approaches here. One I have seen a few times in the past is the `/api/verb/noun` approach. E.g `/api/fetch/user/{user_id}` or `/api/create/user`. This is *fine*, it works, but in my experience it gets messy quickly. The verb is also redundent, to fetch i still *should* be using a GET request. To create I *should* be using a POST request etc. Should, because you don't have to, but you're making things harder for yourself.
 
-### 2b - What unique identifer should the urls use
-** An integer **
+## 3 - What unique identifer should the urls use
+**An integer**
 
 There are a few different thoughts on what to use for the identifer in the url. I'll cover the three most common here.
 
@@ -46,16 +46,20 @@ There are a few different thoughts on what to use for the identifer in the url. 
 Note - uuidv7 does infact follow a pattern - the first few digits use the current timestamp, and this is a good thing - it allows for faster sorting, just not good for an exposed id.   
 3. **Machine name / name** - e.g `/api/users/test_name`. This approach creates by far the most human readable urls. They are great in cases where a name isn't expected to change much and it's not revealing to much information. In the example here we're using the users full name, a hacker could use this to deduct the correct id for a user, or even use it to determine if we have a user in our system at all. Machine names also have a problem where if the field we are using for the name changes (e.g a person changes their name to Test Name 2) then all urls will either have to keep using the old - now incorrect - name, or the url changes, and all hardcoded endpoints break.
 
-## 3. What structure the response should take.
-**See the OpenAPI schema here @TODO**
+## 4. What structure the response should take.
+**[openapi.yml](See the OpenAPI schema here (openapi.yml))**
 
-The formality of what the response and request should look like. There are a few ways to do this, a simple document with a table listing the fields and their datatypes will do the trick. 
+**404 will be used for both invalid id AND permission denied**
+
+The formality of what the response and request should look like. There are a few ways to do this, a simple document with a table listing the fields and their datatypes will do the trick. We should also define what the responses should be - e.g what a 404 looks like.
+
+In this example I have chosen to make a permission denied to view a user return a 404. This is becoming standard practice for private data. It makes it harder for a hacker (or someone snooping), to deduct if a user id exists in the system or not. A 404 could either mean the user isn't in the system, or that they just can't see it - the ambiquity makes their job harder.
 
 For this exercise though I will use an OpenAPI definition. OpenAPI is very versitile - you can use it to not only generate the Documentation, but you can use it to generate both the client library, and the boilerplate for the server api itself. 
 
 With this in mind, OpenAPI is great for keeping the documentation, client, and server, all in sync. Part of your CI/CD pipeline can run a list of jobs to update your documentation, and the client library for example. I would recommend the OpenAPI schemas being kept with the server, implementing or changing an endpoint on the server should trigger the documentation and client to be generated.
 
-## 3. What should this endpoint be *built in*?
+## 5. What should this endpoint be *built in*?
 **Laravel**
 
 The api needs to be built in something. Though you can build an API directly in PHP, or javascript (if using Node.js), it's not recommended, you'll be increasing your workload significantly. Rather it's better to use a framework where the bulk of the boilerplate has been done for you. Laravel in PHP for example, or Koa.js in Javascript.
@@ -64,4 +68,4 @@ There can be a few considerations over what you choose to use for your framework
 
 I've already set up Laravel, so I'll use that*.
 
-* *Note actually, since i'm not implmenting this end point. But I will use Laravel for task 2*
+* *Not actually, since i'm not implementing this end point. But I will use Laravel for task 2*
