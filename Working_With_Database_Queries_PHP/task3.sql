@@ -2,6 +2,6 @@
 select p.product_id, p.product_name, sum(s.uuid) 
 from sales s
 join products p on s.product_id = p.product_id
-group by p.product_id, p.product_name /*postgreSQL requires grouping if an aggregate is used*/
+group by p.product_id, p.product_name 
 order by sum(s.uuid) desc
 limit 5;

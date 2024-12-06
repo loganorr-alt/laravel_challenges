@@ -2,7 +2,7 @@
 
 See directory, Programming Challenges - PHP. 
 
-If PHP has been installed, all three tasks can be run from the command line e.g: `php run task1.php`
+If PHP has been installed, all three tasks can be run from the command line e.g: `php task1.php`
 
 - [Task 1](Programming_Challenges_PHP/task1.php)
 - [Task 2](Programming_Challenges_PHP/task2.php)
@@ -19,14 +19,13 @@ An important artifact of planning and designing an API is an openAPI spec. Which
 - [Task 1](Creating_and_Designing_APIs_PHP/task1.md)
 - [Task 2](Creating_and_Designing_APIs_PHP/task2.md)
 - [Open API yaml definition](Creating_and_Designing_APIs_PHP/openapi.yml)
-- [Task 2 code]() @TODO
 
 
 # Section 3: Working with Database queries (PHP).
 
 For these exercises I 'invented' in my mind a schema to work with. 
 
-These were written with PostgreSQL in mind.
+These were written with PostgreSQL in mind (but that shouldn't matter).
 
 - [Task 1](Working_With_Database_Queries_PHP/task1.sql)
 - [Task 2](Working_With_Database_Queries_PHP/task2.sql)
@@ -37,7 +36,7 @@ These were written with PostgreSQL in mind.
 
 **Note:** This is the last section I worked on, and as may be evident, incomplete, and rushed.
 
-The design phase uses the same process as in the Creating and Designing APIs section.
+The design phase uses the same process as in the Creating and Designing APIs section. So I've mostly summarised my decisions here, only going into a little detail when something is different
 
 - [Task 1](Building_APIs_Laravel/task1.md)
 - [Task 2](Building_APIs_Laravel/task2.md)

@@ -28,6 +28,6 @@ Route::apiResource('products', ProductController::class);
 
 **Within Laravel:**
 
-- Routing: [laravel-sample/routes/api.php](laravel-sample/routes/api.php)
-- Controller: [laravel-sample/app/Http/Controllers/Api/OrderController.php](laravel-sample/app/Http/Controllers/Api/ProductController.php)
-- Resource:  [laravel-sample/app/Http/Resources/ProductAPIController.php](laravel-sample/app/Http/Controllers/Api/ProductAPIController.php)
+- Routing: [laravel-sample/routes/api.php](../laravel-sample/routes/api.php)
+- Controller: [laravel-sample/app/Http/Controllers/Api/OrderController.php](../laravel-sample/app/Http/Controllers/Api/ProductController.php)
+- Resource:  [laravel-sample/app/Http/Resources/ProductAPIController.php](../laravel-sample/app/Http/Controllers/Api/ProductAPIController.php)

@@ -30,8 +30,8 @@ Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 **Within Laravel:**
 
-- Routing: [laravel-sample/routes/api.php](laravel-sample/routes/api.php)
-- Controller: [laravel-sample/app/Http/Controllers/Api/UserController.php](laravel-sample/app/Http/Controllers/Api/UserController.php)
+- Routing: [laravel-sample/routes/api.php](../laravel-sample/routes/api.php)
+- Controller: [laravel-sample/app/Http/Controllers/Api/UserController.php](../laravel-sample/app/Http/Controllers/Api/UserController.php)
 
 
 ## Sample Curl

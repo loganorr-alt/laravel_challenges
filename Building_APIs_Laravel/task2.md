@@ -32,8 +32,8 @@ Route::post('/orders', [OrderController::class, 'store']);`
 
 **Within Laravel:**
 
-- Routing: [laravel-sample/routes/api.php](laravel-sample/routes/api.php)
-- Controller: [laravel-sample/app/Http/Controllers/Api/OrderController.php](laravel-sample/app/Http/Controllers/Api/OrderController.php)
+- Routing: [laravel-sample/routes/api.php](../laravel-sample/routes/api.php)
+- Controller: [laravel-sample/app/Http/Controllers/Api/OrderController.php](../laravel-sample/app/Http/Controllers/Api/OrderController.php)
 
 
 ## Sample Curl
