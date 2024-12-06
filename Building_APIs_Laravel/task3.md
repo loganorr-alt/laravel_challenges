@@ -19,7 +19,7 @@ In doing these tasks I ran out of time to enable / do the boiler plate to do aut
 
 **Split out of Laravel:**
 
-- Order Controller: [task3-UserController.php](task2-UserController.php)
+- Order Controller: [task3-UserController.php](task3-UserController.php)
 
 **API route:**
 
