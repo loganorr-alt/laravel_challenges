@@ -30,11 +30,11 @@ Route::post('/posts', [PostsController::class, 'store']);
 ## Sample Curl
 
 ```
-curl -X POST http://localhost:8080/api/posts \
+curl -X POST https://laravel.tuffing.co.nz/api/posts \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{
     "title": "A title",
-    "content": "Test content",
+    "content": "Test content"
 }'
 ```
