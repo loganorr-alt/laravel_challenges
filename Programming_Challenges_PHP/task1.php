@@ -19,7 +19,8 @@ function sumEvenValues(array $integers): int {
         if (is_numeric($int) && $int % 2 == 0) {
             $sum += $int;
         }
-        else 
+        
+        if (!is_numeric($int))
         {
             print('Invalid input: '. $int. PHP_EOL);
         }

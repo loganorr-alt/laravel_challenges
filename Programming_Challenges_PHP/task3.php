@@ -35,12 +35,3 @@ function findSecondHighestInteger(array $integers): int {
 
     return $secondMax;
 }
-
-function findSecondHighestIntegerNaive(array $integers): int {
-    if (count($integers) < 2) {
-        return 0;
-    }
-
-    rsort($integers);
-    return $integers[1];
-}

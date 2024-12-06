@@ -16,9 +16,11 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('customer_id')->constrained()->on('customers');
             $table->decimal('total', 10, 2);
+            $table->string('billing_name');
+            $table->string('billing_address');
         });
 
-        Schema::create('order_product', function (Blueprint $table) {
+        Schema::create('ordered_products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('order_id')->constrained()->on('orders');

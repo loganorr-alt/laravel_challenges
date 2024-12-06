@@ -13,7 +13,7 @@ Schema::create('orders', function (Blueprint $table) {
     $table->id();
     $table->timestamps();
     $table->foreignId('customer_id')->constrained()->on('customers');
-    $table->decimal('total', 10, 2);
+    $table->decimal('total', 10, 2)->default(0.00);
 });
 
 // The products ordered would be a one-to-many relationship with the order so we need a seperate table to store these.

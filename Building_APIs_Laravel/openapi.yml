@@ -147,7 +147,7 @@ components:
         billing_address:
           type: string
           example: 123 street, Country
-        Products:
+        products:
           type: array
           items:
             $ref: "#/components/schemas/OrderedProduct"
